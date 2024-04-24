@@ -18,6 +18,20 @@ class Controller {
     private val user = mutableListOf<userDTO>()
     //유저 리스트 생성
 
+    @PostMapping("/registerUsers")
+    fun registerUsers(
+        @RequestBody userDTORe: userDTORequest
+    ) : ResponseEntity<userDTO> {
+        val userDTO = userDTO( // 5개의 요소 삽입
+            //안드로이드에서 3개의 editText에서 값 받아오기 필요
+            fullname = userDTORe.fullname,
+            email = userDTORe.email,
+            password = userDTORe.password,
+        )
+        user.add(userDTO)
+        return ResponseEntity.ok().body(userDTO)
+    }
+
     @GetMapping("/getUsers")
     fun getAlluserDTO(
         @RequestBody userDTORequest : userDTORequest):
