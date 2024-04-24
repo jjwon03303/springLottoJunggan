@@ -98,7 +98,8 @@ class Controller {
     }
 
     //https://lotto.minq.work/lotto/check
-    // #####2 inder:1의 winningNumbers 내부의 number은 변함이 없고 위닝넘버니까 저걸 불러와서 win 넘버로 뷰
+    // #####2 index마다 체크박스를 만들어야함. index+"회차" 로 생성됨
+    // inder의 winningNumbers 내부의 number는 그 회차의 당첨번호이니 그 번호들을 뷰로 띄워야함
     // result가 각 6개의 열로 되어있음. 6개의 열을 전부 뿌려야 함
     // result의 내부의 7개 넘버를 각 열마다 뿌림.
     //만약 correctNumbers 내부의 numbers에 번호가 존재한다면 그 열의 그 번호는 색깔처리
