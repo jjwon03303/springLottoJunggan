@@ -67,16 +67,20 @@ class Controller {
         @RequestBody lottoDTO: lottoDTOReqeust
     ) : ResponseEntity<lottoDTO> {
         val lottoDTO = lottoDTO( //
-            n1 = kotlin.random.Random(45).toString().toInt(),
-            n2 = kotlin.random.Random(45).toString().toInt(),
-            n3 = kotlin.random.Random(45).toString().toInt(),
-            n4 = kotlin.random.Random(45).toString().toInt(),
-            n5 = kotlin.random.Random(45).toString().toInt(),
-            n6 = kotlin.random.Random(45).toString().toInt(),
-            n7b = kotlin.random.Random(45).toString().toInt(),
+            n1 = makeLottoNumber(),
+            n2 = makeLottoNumber(),
+            n3 = makeLottoNumber(),
+            n4 = makeLottoNumber(),
+            n5 = makeLottoNumber(),
+            n6 = makeLottoNumber(),
+            n7b = makeLottoNumber(),
         )
         lotto.add(lottoDTO)
         return ResponseEntity.ok().body(lottoDTO)
+    }
+
+    fun makeLottoNumber() : Int { //45번으로 뽑는 로또번호 만들기 함수
+        return kotlin.random.Random(45).toString().toInt()
     }
 
 
