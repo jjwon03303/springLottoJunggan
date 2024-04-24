@@ -97,6 +97,13 @@ class Controller {
         return ResponseEntity.ok().body(response)
     }
 
+    //https://lotto.minq.work/lotto/check
+    // #####2 inder:1의 winningNumbers 내부의 number은 변함이 없고 위닝넘버니까 저걸 불러와서 win 넘버로 뷰
+    // result가 각 6개의 열로 되어있음. 6개의 열을 전부 뿌려야 함
+    // result의 내부의 7개 넘버를 각 열마다 뿌림.
+    //만약 correctNumbers 내부의 numbers에 번호가 존재한다면 그 열의 그 번호는 색깔처리
+    //각 열의 왼쪽 TextView는 result 내부로 tv.text = result 해줄것 (ex : "낙첨")
+
 
 //    private val tests = mutableListOf<bbDTO>()
 //
