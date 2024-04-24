@@ -105,6 +105,8 @@ class Controller {
     //만약 correctNumbers 내부의 numbers에 번호가 존재한다면 그 열의 그 번호는 색깔처리
     //각 열의 왼쪽 TextView는 result 내부로 tv.text = result 해줄것 (ex : "낙첨")
 
+    //어려워요
+
 
 //    private val tests = mutableListOf<bbDTO>()
 //
