@@ -11,12 +11,16 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.time.LocalDateTime
 import java.util.*
+import java.util.Random
 
 @RestController
 class Controller {
 
     private val user = mutableListOf<userDTO>()
     //유저 리스트 생성
+
+    private val lotto = mutableListOf<lottoDTO>()
+    //로또번호 리스트 생성
 
     @PostMapping("/registerUsers")
     fun registerUsers(
@@ -56,6 +60,23 @@ class Controller {
         return -1 // 실패
 
         //안드로이드에서 0일시 다음 화면으로, -1이라면 에러를 띄움
+    }
+
+    @PostMapping("/makelottoNumber")
+    fun registerUsers(
+        @RequestBody lottoDTO: lottoDTOReqeust
+    ) : ResponseEntity<lottoDTO> {
+        val lottoDTO = lottoDTO( //
+            n1 = kotlin.random.Random(45).toString().toInt(),
+            n2 = kotlin.random.Random(45).toString().toInt(),
+            n3 = kotlin.random.Random(45).toString().toInt(),
+            n4 = kotlin.random.Random(45).toString().toInt(),
+            n5 = kotlin.random.Random(45).toString().toInt(),
+            n6 = kotlin.random.Random(45).toString().toInt(),
+            n7b = kotlin.random.Random(45).toString().toInt(),
+        )
+        lotto.add(lottoDTO)
+        return ResponseEntity.ok().body(lottoDTO)
     }
 
 
