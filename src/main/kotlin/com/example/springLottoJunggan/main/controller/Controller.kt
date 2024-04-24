@@ -74,6 +74,12 @@ class Controller {
             n5 = makeLottoNumber(),
             n6 = makeLottoNumber(),
             n7b = makeLottoNumber(),
+
+            // ##### 각각 함수돌려서 중복인지 아닌지 알아보는건 귀찮으니까 그냥 7개중 중복이 있다면
+            //7개 전부 다 그냥 다시한번 돌리는 함수 있어야 함
+            //n1~n7을 리스트화시키고 그중 같은것이 있다면 while문을 빠져나가지 못하고
+            //다시 한번 makeLottoNumber()을 7번 돌리는 구조
+
         )
         lotto.add(lottoDTO)
         return ResponseEntity.ok().body(lottoDTO)
@@ -81,6 +87,14 @@ class Controller {
 
     fun makeLottoNumber() : Int { //45번으로 뽑는 로또번호 만들기 함수
         return kotlin.random.Random(45).toString().toInt()
+    }
+
+    @GetMapping("/getLottoNumber")
+    fun getAllLottoDTO(
+        @RequestBody lottoDTORe: lottoDTOReqeust):
+            ResponseEntity<List<lottoDTO>> {
+        val response = lotto
+        return ResponseEntity.ok().body(response)
     }
 
 
