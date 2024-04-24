@@ -34,9 +34,9 @@ class Controller {
         // 안드로이드에서 처리해줘야할 일
         // val id : String = "email": "{etLogin.text.toString()}"
         // val pw : String = "password": "{etPw.text.toString()}"
-        val id : String = "\"email\": \"test\"" // 아이디 테스팅 코드
+        val email : String = "\"email\": \"test\"" // 아이디 테스팅 코드
         val pw : String = "\"password\": \"q1w2e3r4\"" // 비밀번호 테스팅 코드
-        if (response.toString().contentEquals(id) && response.toString().contentEquals(pw)){
+        if (response.toString().contentEquals(email) && response.toString().contentEquals(pw)){
             return 0 // 성공!
         }
         return -1 // 실패
