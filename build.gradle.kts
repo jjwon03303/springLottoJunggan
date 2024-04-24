@@ -23,10 +23,23 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+//	swagger-ui
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
+
+//  graphql
+	implementation ("org.springframework.boot:spring-boot-starter-graphql")
+	implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:15.1.0")
+	implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:11.1.0")
+
+//	util
+	implementation("net.datafaker:datafaker:2.1.0")
 }
 
 tasks.withType<KotlinCompile> {
